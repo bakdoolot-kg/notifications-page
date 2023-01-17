@@ -4,48 +4,184 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <!-- <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png"> -->
   
-  <title>Frontend Mentor | Notifications page</title>
+  <title>Notifications page</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <!-- CSS -->
+  <link rel="stylesheet" href="./src/dist/style.css">
+  <!-- JAVASCRIPT -->
+  <script src="./src/js/script.js" defer></script>
 </head>
 <body>
+  <!-- MAIN -->
+  <main>
+    <section class="notification">
+      <!-- head -->
+      <div class="notification__head">
+        <h1 class="notification__header">Notifications
+          <span class="notification__count">3</span>
+        </h1>
+        <button class="mark-read" onclick="markAllRead()">Mark all as read</button>
+      </div>
+      
+      <!-- NOTIFICATION FEED -->
+      <div class="feed feed--display">
+        <!-- Container -->
+        <div class="feed__container container unread" data-status="unread">
+          <!-- Profile -->
+          <div class="feed__profile">
+            <img src="./src/assets/images/avatar-mark-webber.webp" alt="">
+          </div>
 
-  Notifications 3
+          <!-- Content -->
+          <div class="feed__content">
+            <div class="content">
+              <a href="#" class="content__user-link">Mark Webber</a> 
+              <span class="content__type">reacted to your recent post</span>
+              <a href="#" class="content__event hover-lift">My first tournament today!</a>
+              <span class="dot"></span>
+            </div>
+            <div class="time">
+              1m ago
+            </div>
+          </div>
+        </div>
 
-  Mark all as read
+        <!-- Container -->
+        <div class="feed__container container unread" data-status="unread">
+          <!-- Profile -->
+          <div class="feed__profile">
+            <img src="./src/assets/images/avatar-angela-gray.webp" alt="">
+          </div>
 
-  Mark Webber reacted to your recent post My first tournament today!
-  1m ago
+          <!-- Content -->
+          <div class="feed__content">
+            <div class="content">
+              <a href="#" class="content__user-link">Angela Gray</a> 
+              <span class="content__type">followed you</span>
+              <span class="dot"></span>
+            </div>
+            <div class="time">
+              5m ago
+            </div>
+          </div>
+        </div>
 
-  Angela Gray followed you
-  5m ago
+        <!-- Container -->
+        <div class="feed__container container unread" data-status="unread">
+          <!-- Profile -->
+          <div class="feed__profile">
+            <img src="./src/assets/images/avatar-jacob-thompson.webp" alt="">
+          </div>
 
-  Jacob Thompson has joined your group Chess Club
-  1 day ago
+          <!-- Content -->
+          <div class="feed__content">
+            <div class="content">
+              <a href="" class="content__user-link">Jacob Thompson</a> 
+              <span class="content__type">has joined your group</span>
+              <a href="#" class="content__group">Chess Club</a>
+              <span class="dot"></span>
+            </div>
+            <div class="time">
+              1 day ago
+            </div>
+          </div>
+        </div>
 
-  Rizky Hasanuddin sent you a private message
-  5 days ago
-  Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and 
-  I'm already having lots of fun and improving my game.
+        <!-- Container -->
+        <div class="feed__container container" data-status="read">
+          <!-- Profile -->
+          <div class="feed__profile">
+            <img src="./src/assets/images/avatar-rizky-hasanuddin.webp" alt="">
+          </div>
 
-  Kimberly Smith commented on your picture
-  1 week ago
+          <!-- Content -->
+          <div class="feed__content">
+            <div class="content">
+              <a href="#" class="content__user-link">Rizky Hasanuddin</a> 
+              <span class="content__type">sent you a private message</span>
+            </div>
+            <div class="time mb-1">
+              5 days ago
+            </div>
+            <div class="message container">
+              Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and I'm already having lots of fun and improving my game.
+            </div>
+          </div>
+        </div>
 
-  Nathan Peterson reacted to your recent post 5 end-game strategies to increase your win rate
-  2 weeks ago
+        <!-- Container -->
+        <div class="feed__container container" data-status="read">
+          <!-- Profile -->
+          <div class="feed__profile">
+            <img src="./src/assets/images/avatar-kimberly-smith.webp" alt="">
+          </div>
 
-  Anna Kim left the group Chess Club
-  2 weeks ago
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+          <!-- Content -->
+          <div class="feed__content flex-box">
+            <div>
+              <div class="content">
+                <a href="#" class="content__user-link">Kimberly Smith</a> 
+                <span class="content__type">commented on your picture</span>
+              </div>
+              <div class="time">
+                1 week ago
+              </div>
+            </div>
+            <div class="picture">
+              <a href="#" aria-label="profile"><img src="./src/assets/images/image-chess.webp" alt=""></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Container -->
+        <div class="feed__container container" data-status="read">
+          <!-- Profile -->
+          <div class="feed__profile">
+            <img src="./src/assets/images/avatar-nathan-peterson.webp" alt="">
+          </div>
+
+          <!-- Content -->
+          <div class="feed__content">
+            <div class="content">
+              <a href="#" class="content__user-link">Nathan Peterson</a> 
+              <span class="content__type">reacted to your recent post</span>
+              <a href="#" class="content__event hover-lift">5 end-game strategies to increase your win rate</a>
+            </div>
+            <div class="time">
+              2 weeks ago
+            </div>
+          </div>
+        </div>
+
+        <!-- Container -->
+        <div class="feed__container container" data-status="read">
+          <!-- Profile -->
+          <div class="feed__profile">
+            <img src="./src/assets/images/avatar-anna-kim.webp" alt="">
+          </div>
+
+          <!-- Content -->
+          <div class="feed__content">
+            <div class="content">
+              <a href="" class="content__user-link">Anna Kim</a> 
+              <span class="content__type">left the group</span>
+              <a href="#" class="content__group">Chess Club</a>
+            </div>
+            <div class="time">
+              2 weeks ago
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ATTRIBUTION -->
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://github.com/bakdoolot-kg" target="_blank">Bakdoolot</a>.
+    </div>
+  </main>
 </body>
 </html>
